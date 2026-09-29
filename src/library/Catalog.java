@@ -30,7 +30,7 @@ public final class Catalog {
 
     public List<Book> search(String query) {
         Objects.requireNonNull(query, "Search query is required");
-        String normalizedQuery = query.toLowerCase(Locale.R00T);
+        String normalizedQuery = query.toLowerCase(Locale.ROOT);
         return books.values().stream()
                 .filter(book -> book.title().toLowerCase(Locale.ROOT).contains(query))
                 .toList();
